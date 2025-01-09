@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    padding-top: 20px;
+}
+
+h3 {
+    color: #333;
+    margin-top: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+span {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.section p {
+    margin-left: 30px;
+}
+
+h1, h3, p {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+p {
+    font-size: 15px;
+}
