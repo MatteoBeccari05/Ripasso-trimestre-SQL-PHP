@@ -1,6 +1,3 @@
-Ecco la consegna formattata:
-
----
 
 ### **SQL: Creazione di un DB per modelli di access point Wi-Fi e produttori**
 
