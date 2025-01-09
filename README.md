@@ -8,7 +8,7 @@
    
 2. **Eseguire le seguenti operazioni sulle tabelle:**
    - **CRUD** (Create, Read, Update, Delete).
-   - **JOIN** (tutti i tipi: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN).
+   - **JOIN** (tutti i tipi).
    - **Utilizzo degli operatori aggregati** (inclusi `GROUP BY` e `HAVING`).
 
 ---
