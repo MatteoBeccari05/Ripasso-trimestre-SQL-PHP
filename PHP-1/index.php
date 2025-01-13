@@ -37,7 +37,6 @@ function verifica_risposta($utente_risposta, $risposta_corretta)
     else
     {
         //se la risposta corretta è un singolo valore
-        //return $utente_risposta === $risposta_corretta ? '<span style="color: green;">✔</span>' : '<span style="color: red;">✘</span>';
         if($utente_risposta === $risposta_corretta)
         {
             return '<span style="color: green;">✔</span>';    //spunta verde se corretto
