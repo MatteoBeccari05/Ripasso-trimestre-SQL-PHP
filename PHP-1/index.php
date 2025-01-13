@@ -1,6 +1,6 @@
 <?php
 
-// Recupero dei dati dal form
+//recupero dei dati dal form
 $name = $_POST['name'];
 $password = $_POST['password'];
 $mail = $_POST['mail'];
@@ -12,37 +12,53 @@ $dbms_preferito = $_POST['dbms5'];
 $dbms_piu_utilizzato = $_POST['dbms6'];
 $dbms_conosciuto_meglio = $_POST['dbms7'];
 
-// Risposte corrette predefinite
+//risposte corrette predefinite
 $risposta_corrente_dbms_comune = "relational";
 $risposte_conosciuti = ["MySQL"];
 $risposta_preferita = "MySQL";
 $risposta_piu_utilizzato = "MySQL";
 $risposte_conosciuto_meglio = ["MySQL", "MongoDB"];
 
-// Funzione per confrontare e aggiungere spunta verde o croce rossa
-function verifica_risposta($utente_risposta, $risposta_corretta) {
-    if (is_array($risposta_corretta)) {
-        // Se la risposta corretta è un array, verifichiamo se tutte le risposte dell'utente sono corrette
-        if (count(array_diff($utente_risposta, $risposta_corretta)) === 0) {
-            return '<span style="color: green;">✔</span>'; // Spunta verde se corretto
-        } else {
-            return '<span style="color: red;">✘</span>'; // Croce rossa se sbagliato
+//funzione per confrontare e aggiungere spunta verde o croce rossa
+function verifica_risposta($utente_risposta, $risposta_corretta)
+{
+    if (is_array($risposta_corretta))
+    {
+        //se la risposta corretta è un array, verifico se tutte le risposte dell'utente sono corrette
+        if (count(array_diff($utente_risposta, $risposta_corretta)) === 0)
+        {
+            return '<span style="color: green;">✔</span>';    //spunta verde se corretto
         }
-    } else {
-        // Se la risposta corretta è un singolo valore
-        return $utente_risposta === $risposta_corretta ? '<span style="color: green;">✔</span>' : '<span style="color: red;">✘</span>';
+        else
+        {
+            return '<span style="color: red;">✘</span>';   //croce rossa se sbagliato
+        }
+    }
+    else
+    {
+        //se la risposta corretta è un singolo valore
+        //return $utente_risposta === $risposta_corretta ? '<span style="color: green;">✔</span>' : '<span style="color: red;">✘</span>';
+        if($utente_risposta === $risposta_corretta)
+        {
+            return '<span style="color: green;">✔</span>';    //spunta verde se corretto
+        }
+        else
+        {
+            return '<span style="color: red;">✘</span>';   //croce rossa se sbagliato
+        }
     }
 }
 
-// Funzione per analizzare una risposta
-function analizza_risposta($risposta) {
-    // Rimuovi gli spazi extra e normalizza la risposta
+//funzione per analizzare una risposta
+function analizza_risposta($risposta)
+{
+    //rimuovi gli spazi extra e normalizza la risposta
     $risposta = trim($risposta);
 
-    // Conta il numero di parole
+    //conta il numero di parole
     $parole = str_word_count($risposta);
 
-    // Conta consonanti, vocali e numeri
+    //conta consonanti, vocali e numeri
     $consonanti = preg_match_all('/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/', $risposta);
     $vocali = preg_match_all('/[aeiouAEIOU]/', $risposta);
     $numeri = preg_match_all('/\d/', $risposta);
@@ -79,7 +95,7 @@ function analizza_risposta($risposta) {
 <p>Funzioni Principali di un DBMS: <?php echo $funzioni_principali; ?></p>
 <br>
 <?php
-// Analisi delle risposte aperte
+//analisi delle risposte aperte
 $definizione_dbms_analizza = analizza_risposta($definizione);
 $funzioni_principali_dbms_analizza = analizza_risposta($funzioni_principali);
 ?>
